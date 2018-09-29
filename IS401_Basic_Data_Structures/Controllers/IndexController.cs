@@ -32,7 +32,27 @@ namespace IS401_Basic_Data_Structures.Controllers
             //Create variables
             Queue<string> lineOfCustomers = new Queue<string>();
             Dictionary<string, int> customerInfo = new Dictionary<string, int>();
-            //Load variables
+            //input data (Log the customers in line)
+            for (int i = 0; i < 100; i++) 
+            {
+                lineOfCustomers.Enqueue(randomName());
+            }
+            //move customers into dictionary and add num burgers bought
+            IEnumerator<string> MyQueueEnumerator = lineOfCustomers.GetEnumerator();
+
+            while (MyQueueEnumerator.MoveNext()) //while enumerator can still move next (IE, the queue still have values left)
+            {
+                string myValue = MyQueueEnumerator.Current; //myValue = what ever is in the queue at this point.
+                if(lineOfCustomers.Contains(myValue))
+                {
+                    customerInfo[myValue] += randomNumberInRange(); //if name is in dictionary, add burgers
+                }
+                else 
+                {
+                    customerInfo.Add(myValue, randomNumberInRange());//first time in line, have to add them to the dictionary
+                    //QUESTION: the first go around, do they get burgers? or should we initiate to 0 first?
+                }
+            }
 
 
             return View();
