@@ -20,7 +20,7 @@ namespace IS401_Basic_Data_Structures.Controllers
             int randomIndex = Convert.ToInt32(random.NextDouble() * 7);
             return names[randomIndex];
         }
-
+        //Random number generator Dr. Anderson gave us.
         public static int randomNumberInRange()
         {
             return Convert.ToInt32(random.NextDouble() * 20);
