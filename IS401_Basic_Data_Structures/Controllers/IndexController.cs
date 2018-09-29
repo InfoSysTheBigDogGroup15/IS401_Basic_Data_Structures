@@ -36,19 +36,22 @@ namespace IS401_Basic_Data_Structures.Controllers
                     CustomerQueue.Enqueue(loopName);
                 
                 }
-            foreach(String Name in CustomerQueue){
+            IEnumerator<string> MyQueueEnumerator = CustomerQueue.GetEnumerator();
+
+            while (MyQueueEnumerator.MoveNext()) //while enumerator can still move next (IE, the queue still have values left)
+            {
+                string myValue = MyQueueEnumerator.Current; //myValue = what ever is in the queue at this point.
+                if (CustomerDictionary.ContainsKey(myValue))
                 {
-                    int value;
-                    if(CustomerDictionary.TryGetValue(Name, out value))
-                        {
-                            CustomerDictionary.Add(Name,0);
-                        
-                          }
-                    else {      CustomerDictionary[Name]+= randomNumberInRange();
-                            }
-                
+                    CustomerDictionary[myValue] += randomNumberInRange(); //if name is in dictionary, add burgers
                 }
-                ViewBag.Output = "<table>";
+                else
+                {
+                    CustomerDictionary.Add(myValue, 0);//first time in line, have to add them to the dictionary
+                    //QUESTION: the first go around, do they get burgers? or should we initiate to 0 first?
+                }
+            }
+            ViewBag.Output = "<table>";
             ViewBag.Output += "<tr>";
             ViewBag.Output += "<th>Name</th>";
             ViewBag.Output += "<th>Burgers</th>";
@@ -71,4 +74,3 @@ namespace IS401_Basic_Data_Structures.Controllers
         }
     }
 }
-    }
