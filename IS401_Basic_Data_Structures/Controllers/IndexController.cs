@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace IS401_Basic_Data_Structures.Controllers
 {
+
+
     public class IndexController : Controller
     {
         //random name generator code
