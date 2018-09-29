@@ -7,7 +7,6 @@ using System.Web.Mvc;
 namespace IS401_Basic_Data_Structures.Controllers
 {
 
-
     public class IndexController : Controller
     {
         //random name generator code
@@ -32,10 +31,11 @@ namespace IS401_Basic_Data_Structures.Controllers
             Boolean usethis = true;
             Dictionary<string, int> CustomerDictionary = new Dictionary<string, int>();
             for (int i =0; i<100; i++)
-                {   string loopName = randomName();
-                    CustomerQueue.Enqueue(loopName);
-                
-                }
+            {
+                string loopName = randomName();
+                CustomerQueue.Enqueue(loopName);
+            }
+
             IEnumerator<string> MyQueueEnumerator = CustomerQueue.GetEnumerator();
 
             while (MyQueueEnumerator.MoveNext()) //while enumerator can still move next (IE, the queue still have values left)
@@ -51,6 +51,7 @@ namespace IS401_Basic_Data_Structures.Controllers
                     //QUESTION: the first go around, do they get burgers? or should we initiate to 0 first?
                 }
             }
+//<<<<<<< Updated upstream
             ViewBag.Output = "<table>";
             ViewBag.Output += "<tr>";
             ViewBag.Output += "<th>Name</th>";
@@ -68,6 +69,12 @@ namespace IS401_Basic_Data_Structures.Controllers
                 ViewBag.Output += "<td>" + Name2.Value + "</td>";
                 ViewBag.Output += "</tr>";
             }
+//=======
+//<<<<<<< HEAD
+
+//=======
+//>>>>>>> 8541a3f... dictionary loaded and has burger values.
+//>>>>>>> Stashed changes
 
             ViewBag.Output += "</table>";
             return View();
