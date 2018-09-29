@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -53,8 +53,12 @@ namespace IS401_Basic_Data_Structures.Controllers
                     //QUESTION: the first go around, do they get burgers? or should we initiate to 0 first?
                 }
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8541a3f... dictionary loaded and has burger values.
 
             return View();
         }
+    }
 }
