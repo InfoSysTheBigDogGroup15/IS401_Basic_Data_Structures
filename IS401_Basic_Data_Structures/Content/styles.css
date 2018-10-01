@@ -35,3 +35,16 @@ tr td:hover {
     background: #666;
     color: #F3F3F3;
 }
+
+body {
+    background-image: url('../Images/ISnOut.jpg');
+    background-size: 100%;
+}
+
+h2, p {
+   color: white;
+}
+
+h2:hover {
+    color: red;
+}
