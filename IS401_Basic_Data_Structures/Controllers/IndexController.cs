@@ -63,18 +63,19 @@ namespace IS401_Basic_Data_Structures.Controllers
 
             foreach (KeyValuePair<string, int> Name2 in CustomerDictionary)
             {
-                
+                String greg = Name2.Key;
+                if (Name2.Key == "Greg Anderson") { greg = "<a href ='http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1748129'>" + Name2.Key + "</a>"; }
                 ViewBag.Output += "<tr>";
-                ViewBag.Output += "<td>" + Name2.Key + "</td>";
+                ViewBag.Output += "<td id ='" + Name2.Key + "' onclick='tdclick()'>" + greg + "</td>";
                 ViewBag.Output += "<td>" + Name2.Value + "</td>";
                 ViewBag.Output += "</tr>";
             }
-//=======
-//<<<<<<< HEAD
+            //=======
+            //<<<<<<< HEAD
 
-//=======
-//>>>>>>> 8541a3f... dictionary loaded and has burger values.
-//>>>>>>> Stashed changes
+            //=======
+            //>>>>>>> 8541a3f... dictionary loaded and has burger values.
+            //>>>>>>> Stashed changes
 
             ViewBag.Output += "</table>";
             return View();
