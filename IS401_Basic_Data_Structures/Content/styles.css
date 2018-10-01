@@ -12,9 +12,10 @@ td, th {
 }
 /* Add borders to cells */
 th {
-    background: #F3F3F3;
+    background: #666;
     font-weight: bold;
     text-align: center;
+    color: #F3F3F3;
 }
 
 td {
@@ -31,6 +32,6 @@ tr:nth-child(odd) td {
 }
 
 tr td:hover {
-    background: blue;
-    color: #FFF;
+    background: #666;
+    color: #F3F3F3;
 }
